@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+	.custom-file-input{display:inline-block;position:relative;color:#533e00;}
+	.custom-file-input input{visibility:hidden;width:100px;}
+	.custom-file-input:before{content:'Choose File';display:inline-block;background:#1A2436;border:1px solid #1A2436;border-radius:100px;padding:9px 28px;outline:none;white-space:nowrap;-webkit-user-select:none;cursor:pointer;font-weight:500;font-size:1rem;color:#FFF;cursor:pointer;position:absolute;top:0;right:0;}
+	.custom-file-input:hover:before{border-color:#CE171F;background:#CE171F;}
+	.custom-file-input:active:before{border-color:#CE171F;background:#CE171F;}
+	</style>dsf dsfdff dsfds
+</head>
+<body>
+	<div class="ginput_container ginput_container_fileupload">
+		<input type="file" id="uploadBtn">
+	</div>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script type="text/javascript">
+jQuery("input[type='file']").wrap( "<label class='custom-file-input'></label>" );
+jQuery(".ginput_container_fileupload").prepend("<input id='uploadFile' placeholder='Choose File' disabled='disabled' />");
+document.getElementById("uploadBtn").onchange = function () {
+	document.getElementById("uploadFile").value = this.value;
+};
+</script>
+</body>
+</html>
